@@ -1,0 +1,51 @@
+[package]
+authors = ["anthhub <anthhub@163.com>"]
+categories = ["wasm"]
+description = "My awesome Yew app."
+edition = "2018"
+license = "Apache-2.0/MIT"
+name = "yew-app"
+readme = "./README.md"
+repository = "https://github.com/anthhub/yew-train-ticket.git"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+log = "0.4"
+yew = { git = "https://github.com/yewstack/yew"}
+yew-functional = { git = "https://github.com/yewstack/yew"}
+yew-router = { git = "https://github.com/yewstack/yew"}
+wasm-logger = "0.2.0"
+wee_alloc = "0.4.5"
+urlparse = "0.7.3"
+wasm-bindgen = { version = "0.2.70", features = ["serde-serialize"]  }
+js-sys = "0.3.47"
+wasm-bindgen-futures = "0.4.20"
+serde = { version = "1.0.80", features = ["derive"] }
+serde_derive = "^1.0.59"
+
+[dependencies.chrono]
+version = "0.4"
+features = ["serde", "wasmbind"]
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.14"
+
+[dev-dependencies.web-sys]
+version = "0.3"
+features = [
+  "Document",
+  "Element",
+  "HtmlCollection",
+  'Window',
+  'HtmlDocument',
+  'Headers',
+  'Request',
+  'RequestInit',
+  'RequestMode',
+  'Response',
+]
